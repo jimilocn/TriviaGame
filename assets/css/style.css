@@ -1,0 +1,16 @@
+body {
+    background: url("../images/tea.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    Margin: 20px;
+    box-sizing: border-box;
+}
+.container{
+    margin-left:0px;
+}
+
+#logo {
+text-align: left;
+}
