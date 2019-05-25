@@ -7,10 +7,69 @@ body {
     Margin: 20px;
     box-sizing: border-box;
 }
-.container{
-    margin-left:0px;
+
+.container {
+    margin-left: 0px;
 }
 
 #logo {
-text-align: left;
+    text-align: left;
+}
+
+#question {
+    font-family: 'Kanit', sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 20px;
+    margin: 20px;
+}
+#dqName {
+    padding: 20px;
+    margin: 20px;
+}
+img {
+    border-radius: 20px;
+}
+
+#answers {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    color: #862423;
+    margin-left:30px;
+}
+#timer {
+    font-family: 'Open Sans', sans-serif;
+    padding:10px;
+    margin:10px;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 15px;
+    margin: 10px;
+}
+
+
+button:hover {
+    opacity: 0.9;
+    background: #a73836;
+    transition: .4s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    background: #a73836;
+    transition: .4s;
+}
+
+#wallPaperChange {
+    background: url("../images/dragqueens.png");
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    Margin: 20px;
+    box-sizing: border-box;
 }
