@@ -148,13 +148,12 @@ $(document).ready(function () {
 
     function runTime() {
         timerDiv.empty();
+        timerDiv.html("<h2>You have " + time + " left</h2>");
         clock = setInterval(countDown, 1000);
         function countDown() {
-            timerDiv.html("<h2>You have " + time + " left</h2>");
+            time--;
 
-            if (time > 0) {
-                time--;
-            };
+            timerDiv.html("<h2>You have " + time + " left</h2>");
 
             if (time === 0) {
                 clearInterval(clock);
@@ -185,6 +184,9 @@ $(document).ready(function () {
         questionsDiv.empty();
         answersDiv.empty();
         timerDiv.empty();
+        $("body").attr("id", "newBackground");
+        answersDiv.attr("class", "newBack text-center");
+        $("#header").hide();
         answersDiv.html("correct answers: " + correctAnswers + "<br>");
         answersDiv.append("incorrect answers: " + incorrectAnswers + "<br>");
         answersDiv.append("unanswered: " + notAnswered);
@@ -196,10 +198,13 @@ $(document).ready(function () {
         });
     };
     function resetAll() {
+        $("body").removeAttr("id", "newBackground");
         dqNameDiv.empty();
         questionsDiv.empty();
+        answersDiv.removeAttr("class", "newBack text-center");
         answersDiv.empty();
         timerDiv.empty();
+        $("#header").show();
         correctAnswers = 0;
         incorrectAnswers = 0;
         notAnswered = 0;
@@ -238,13 +243,13 @@ $(document).ready(function () {
     };
 
 
-var startButton = $("<button>");
-startButton.html("<h1>Click to Start</h1>");
-timerDiv.html(startButton);
-startButton.on("click", function() {
-    runTime();
-    showTrivia();
-});
+    var startButton = $("<button>");
+    startButton.html("<h1>Click to Start</h1>");
+    timerDiv.html(startButton);
+    startButton.on("click", function () {
+        runTime();
+        showTrivia();
+    });
 
 
 });

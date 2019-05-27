@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 #logo {
@@ -64,7 +64,8 @@ button:hover {
     transition: .4s;
 }
 
-#wallPaperChange {
+
+#newBackground {
     background: url("../images/dragqueens.png");
     background-size: cover;
     background-repeat: repeat;
@@ -72,4 +73,14 @@ button:hover {
     width: 100%;
     Margin: 20px;
     box-sizing: border-box;
+}
+
+.newBack {
+    background: rgb(248, 217, 222);
+    opacity: 0.85;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: #862423;
+    margin-left:30px;
+    padding: 20px;
 }
