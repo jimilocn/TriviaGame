@@ -21,8 +21,7 @@ $(document).ready(function () {
 
 
     // array of questions, answers, and pictures for each portion of the game
-    var questions = [
-        {
+    var questions = [{
             queen: "__________ Delano",
             answers: ["Adore", "Airy", "Adonis", "Althea"],
             rightAnswer: "Adore",
@@ -119,12 +118,15 @@ $(document).ready(function () {
     function win() {
         correctAnswers++;
         questionNumber++;
+        var audioWinElement = document.createElement("audio");
+        audioWinElement.setAttribute("src", "assets/sound/you better work.mp3");
+        audioWinElement.play();
         var queenGif = $(questions[index].animate);
         questionsDiv.html(queenGif);
         dqNameDiv.html(questions[index].name);
         answersDiv.empty();
+        answersDiv.html("<h2> CORRECT! </h2>");
         timerDiv.empty();
-        timerDiv.html("<h2> CORRECT! </h2>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
@@ -133,12 +135,15 @@ $(document).ready(function () {
     function lose() {
         incorrectAnswers++;
         questionNumber++;
+        var audioLoseElement = document.createElement("audio");
+        audioLoseElement.setAttribute("src", "assets/sound/sashay away.mp3");
+        audioLoseElement.play();
         var loseGif = $(questions[index].lose);
         questionsDiv.html(loseGif);
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
+        answersDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         timerDiv.empty();
-        timerDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
@@ -147,12 +152,15 @@ $(document).ready(function () {
     function unanswered() {
         notAnswered++;
         questionNumber++;
+        var audioLoseElement = document.createElement("audio");
+        audioLoseElement.setAttribute("src", "assets/sound/sashay away.mp3");
+        audioLoseElement.play();
         var loseGif = $(questions[index].lose);
         questionsDiv.html(loseGif);
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
+        answersDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         timerDiv.empty();
-        timerDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
@@ -162,6 +170,7 @@ $(document).ready(function () {
         timerDiv.empty();
         timerDiv.html("<h2>You have " + time + " left</h2>");
         clock = setInterval(countDown, 1000);
+
         function countDown() {
             time--;
 
@@ -184,9 +193,7 @@ $(document).ready(function () {
             answersDiv.empty();
             dqNameDiv.empty();
             showTrivia();
-        }
-
-        else {
+        } else {
             results();
         }
     };
@@ -197,6 +204,9 @@ $(document).ready(function () {
         questionsDiv.empty();
         answersDiv.empty();
         timerDiv.empty();
+        var audioResultElement = document.createElement("audio");
+        audioResultElement.setAttribute("src", "assets/sound/RPDR Theme Song.mp3");
+        audioResultElement.play();
         $("body").attr("id", "newBackground");
         answersDiv.attr("class", "newBack text-center");
         $("#header").hide();
@@ -253,9 +263,7 @@ $(document).ready(function () {
 
                 if (userChoice === questions[index].rightAnswer) {
                     win();
-                }
-
-                else {
+                } else {
                     lose();
                 }
             });
