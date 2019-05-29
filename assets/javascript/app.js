@@ -31,6 +31,7 @@ $(document).ready(function () {
             queen: "__________ Delano",
             answers: ["Adore", "Airy", "Adonis", "Althea"],
             rightAnswer: "Adore",
+            queenName: "Adore Delano",
             animate: "<img src='assets/images/adore.gif'>",
             lose: "<img src='assets/images/away.gif'>",
             name: "<img src='assets/images/delano.gif'>"
@@ -39,6 +40,7 @@ $(document).ready(function () {
             queen: "__________ Act",
             answers: ["Christy", "Clara", "Courtney", "Cassie"],
             rightAnswer: "Courtney",
+            queenName: "Courtney Act",
             animate: "<img src='assets/images/courtney.gif'>",
             lose: "<img src='assets/images/bye.gif'>",
             name: "<img src='assets/images/act.gif'>"
@@ -47,6 +49,7 @@ $(document).ready(function () {
             queen: "Bianca __________ Rio",
             answers: ["Des", "Del", "De", "Dio"],
             rightAnswer: "Del",
+            queenName: "Bianca Del Rio",
             animate: "<img src='assets/images/bianca.gif'>",
             lose: "<img src='assets/images/sashay.gif'>",
             name: "<img src='assets/images/rio.gif'>"
@@ -55,6 +58,7 @@ $(document).ready(function () {
             queen: "Lagaja __________",
             answers: ["Eleganza", "Elite", "Estranja", "Elaeja"],
             rightAnswer: "Estranja",
+            queenName: "Laganja Estranja",
             animate: "<img src='assets/images/laganja.gif'>",
             lose: "<img src='assets/images/away.gif'>",
             name: "<img src='assets/images/estranja.gif'>"
@@ -63,6 +67,7 @@ $(document).ready(function () {
             queen: "Gia __________",
             answers: ["Gunn", "Gee", "Gia", "Grande"],
             rightAnswer: "Gunn",
+            queenName: "Gia Gunn",
             animate: "<img src='assets/images/gia.gif'>",
             lose: "<img src='assets/images/bye.gif'>",
             name: "<img src='assets/images/gunn.gif'>"
@@ -71,6 +76,7 @@ $(document).ready(function () {
             queen: "Sharon __________",
             answers: ["Needles", "Yo'Mama", "Karen", "Tips"],
             rightAnswer: "Needles",
+            queenName: "Sharon Needles",
             animate: "<img src='assets/images/Sharon.gif'>",
             lose: "<img src='assets/images/sashay.gif'>",
             name: "<img src='assets/images/needles.gif'>"
@@ -79,6 +85,7 @@ $(document).ready(function () {
             queen: "Bob The __________ Queen",
             answers: ["Beauty", "Dairy", "Drag", "Celestial"],
             rightAnswer: "Drag",
+            queenName: "Bob The Drag Queen",
             animate: "<img src='assets/images/bob.gif'>",
             lose: "<img src='assets/images/away.gif'>",
             name: "<img src='assets/images/queen.gif'>"
@@ -87,6 +94,7 @@ $(document).ready(function () {
             queen: "Plastique __________",
             answers: ["Recycle", "Bag", "Tiara", "Barbie"],
             rightAnswer: "Tiara",
+            queenName: "Plastique Tiara",
             animate: "<img src='assets/images/plastique.gif'>",
             lose: "<img src='assets/images/bye.gif'>",
             name: "<img src='assets/images/tiara.gif'>"
@@ -95,6 +103,7 @@ $(document).ready(function () {
             queen: "Trixie __________",
             answers: ["Mattel", "Mixie", "Madeline", "Mix"],
             rightAnswer: "Mattel",
+            queenName: "Trixie Mattel",
             animate: "<img src='assets/images/trixie.gif'>",
             lose: "<img src='assets/images/sashay.gif'>",
             name: "<img src='assets/images/mattel.gif'>"
@@ -103,6 +112,7 @@ $(document).ready(function () {
             queen: "Alyssa __________",
             answers: ["Matthews", "Edwards", "Smith", "Jones"],
             rightAnswer: "Edwards",
+            queenName: "Alyssa Edwards",
             animate: "<img src='assets/images/alyssa.gif'>",
             lose: "<img src='assets/images/away.gif'>",
             name: "<img src='assets/images/edwards.gif'>"
@@ -117,6 +127,7 @@ $(document).ready(function () {
         dqNameDiv.html(questions[index].name);
         answersDiv.empty();
         timerDiv.empty();
+        timerDiv.html("<h2> CORRECT! </h2>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
@@ -129,6 +140,7 @@ $(document).ready(function () {
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
         timerDiv.empty();
+        timerDiv.html("<h4> Gurl... She is "+ questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
@@ -141,6 +153,7 @@ $(document).ready(function () {
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
         timerDiv.empty();
+        timerDiv.html("<h4> Gurl... She is "+ questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
 
