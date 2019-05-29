@@ -5,13 +5,8 @@ $(document).ready(function () {
         // title within the popover
         title: 'Fill in the Blank!',
     });
-    console.log("BOOM");
 
-    // click start to start game
-
-
-    // 20 second counter for each question
-
+    // Global variables
     var correctAnswers = 0;
     var incorrectAnswers = 0;
     var notAnswered = 0;
@@ -25,7 +20,7 @@ $(document).ready(function () {
     var mamaRu = "<img src='assets/images/sad.png'>";
 
 
-    // array of questions\
+    // array of questions, answers, and pictures for each portion of the game
     var questions = [
         {
             queen: "__________ Delano",
@@ -119,6 +114,8 @@ $(document).ready(function () {
         },
     ];
 
+
+    // function for what happens when you win
     function win() {
         correctAnswers++;
         questionNumber++;
@@ -132,6 +129,7 @@ $(document).ready(function () {
         setTimeout(nextQuestion, 4000);
     };
 
+    // function for everything that happens when you lose
     function lose() {
         incorrectAnswers++;
         questionNumber++;
@@ -140,11 +138,12 @@ $(document).ready(function () {
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
         timerDiv.empty();
-        timerDiv.html("<h4> Gurl... She is "+ questions[index].queenName + "</h4>");
+        timerDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
     };
 
+    // function for what happens when you do not answer a question
     function unanswered() {
         notAnswered++;
         questionNumber++;
@@ -153,12 +152,12 @@ $(document).ready(function () {
         dqNameDiv.html(mamaRu);
         answersDiv.empty();
         timerDiv.empty();
-        timerDiv.html("<h4> Gurl... She is "+ questions[index].queenName + "</h4>");
+        timerDiv.html("<h4> Gurl... She is " + questions[index].queenName + "</h4>");
         clearInterval(clock);
         setTimeout(nextQuestion, 4000);
+    };
 
-    }
-
+    // function that allows the timer to start at the bottom of the screen
     function runTime() {
         timerDiv.empty();
         timerDiv.html("<h2>You have " + time + " left</h2>");
@@ -172,10 +171,10 @@ $(document).ready(function () {
                 clearInterval(clock);
                 unanswered();
             };
+        };
+    };
 
-        }
-    }
-
+    // function that triggers the next question to pull up
     function nextQuestion() {
         if (questionNumber < questions.length) {
             time = 15;
@@ -192,6 +191,7 @@ $(document).ready(function () {
         }
     };
 
+    // function that pulls up the page with all the results from the game
     function results() {
         dqNameDiv.empty();
         questionsDiv.empty();
@@ -210,6 +210,8 @@ $(document).ready(function () {
             resetAll();
         });
     };
+
+    // will reset the whole game so the user can play the game another round
     function resetAll() {
         $("body").removeAttr("id", "newBackground");
         dqNameDiv.empty();
@@ -228,17 +230,23 @@ $(document).ready(function () {
         runTime();
     }
 
+
+    // function that has all the functions within the game
     function showTrivia() {
+        // display the question (fill in the blank) with the drag queen names
         questionsDiv.html(questions[index].queen);
 
+        // for loop that creates a button for each other the answer within the object from the array
         for (var i = 0; i < questions[index].answers.length; i++) {
             var answerButton = $("<button>");
             answerButton.html(questions[index].answers[i]);
+            // important to create an id that can be cross referenced with the correct answer in the array
             answerButton.attr("id", questions[index].answers[i]);
             answersDiv.append(answerButton);
 
+            // on click function for each button within the array
             $(answerButton).on("click", function () {
-
+                // this means that each time the user clicks, the data that is pulled is the text within the "id", which is cross checked with the right answer within the array to determine a win or a lose
                 var userChoice = $(this).attr("id");
                 console.log(userChoice);
 
@@ -251,11 +259,11 @@ $(document).ready(function () {
                     lose();
                 }
             });
-        }
+        };
 
     };
 
-
+    // function for the start button at the beginning of the screen
     var startButton = $("<button>");
     startButton.html("<h1>Click to Start</h1>");
     timerDiv.html(startButton);

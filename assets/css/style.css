@@ -1,3 +1,4 @@
+/* basic styling for the whole body with the background */
 body {
     background: url("../images/tea.jpg");
     background-size: cover;
@@ -8,15 +9,18 @@ body {
     box-sizing: border-box;
 }
 
+/* plae the whole container to the left of the screen away from the tea cup */
 .container {
     margin-left: 10px;
 }
 
+/* styling for the "what is the tea" logo */
 #logo {
     text-align: left;
     width: 100%;
 }
 
+/* styling for the fill in the blank with the drag queen names */
 #question {
     font-family: 'Kanit', sans-serif;
     font-size: 50px;
@@ -25,16 +29,19 @@ body {
     margin: 20px;
 }
 
+/* styling for the glitter drag queen name  that appears after a win*/
 #dqName {
     padding: 20px;
     margin: 20px;
 }
 
+/* styling for all images to curve the edges */
 img {
     border-radius: 20px;
     width: 100%;
 }
 
+/* styling for the answer buttons */
 #answers {
     font-family: 'Open Sans', sans-serif;
     font-size: 35px;
@@ -42,12 +49,14 @@ img {
     margin-left: 30px;
 }
 
+/* styling for the timmer at the bottom of the screen */
 #timer {
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
     margin: 10px;
 }
 
+/* styling for the text within each answer button */
 button {
     font-family: 'Open Sans', sans-serif;
     border-radius: 10px;
@@ -56,18 +65,21 @@ button {
     margin: 10px;
 }
 
+/* hover function for each answer button */
 button:hover {
     opacity: 0.9;
     background: #a73836;
     transition: .4s;
 }
 
+/* hover function for the top "how to play" button */
 .btn:hover {
     opacity: 0.9;
     background: #a73836;
     transition: .4s;
 }
 
+/* for the new background in the result page */
 #newBackground {
     background: url("../images/dragqueens.png");
     background-size: cover;
@@ -78,6 +90,7 @@ button:hover {
     box-sizing: border-box;
 }
 
+/* background for the div that contains the result data at the end of the game */
 .newBack {
     background: rgb(248, 217, 222);
     opacity: 0.85;
